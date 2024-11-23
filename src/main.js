@@ -1,4 +1,4 @@
-import PointPresenter from './presenter/point-presenter.js';
+import PointPresenter from './presenter/points-presenter.js';
 const pageHeader = document.querySelector('.page-header');
 const tripMain = pageHeader.querySelector('.trip-main');
 const tripControls = pageHeader.querySelector('.trip-controls__filters');
