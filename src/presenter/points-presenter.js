@@ -2,7 +2,7 @@ import {render, RenderPosition} from '../render';
 import InfoView from '../view/information';
 import FilterView from '../view/filter';
 import SortView from '../view/sort';
-import PointListView from '../view/point-list';
+import PointListView from '../view/points-list';
 import PointView from '../view/point';
 import FormAddView from '../view/form-add';
 import FormEditView from '../view/form-edit';
