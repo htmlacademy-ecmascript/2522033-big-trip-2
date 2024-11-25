@@ -7,6 +7,7 @@ import PointView from '../view/point';
 import FormAddView from '../view/form-add';
 import FormEditView from '../view/form-edit';
 
+
 const COUNT_POINTS = 3;
 
 export default class PointPresenter {
