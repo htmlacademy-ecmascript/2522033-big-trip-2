@@ -12,3 +12,4 @@ const pointPresenter = new PointPresenter({
 });
 
 pointPresenter.init();
+
