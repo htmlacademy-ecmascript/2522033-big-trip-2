@@ -1,7 +1,7 @@
 # Проект «Большое путешествие»
 
 * Студент: [Николай Казанцев](https://up.htmlacademy.ru/ecmascript-individual/2/user/2522033).
-* Наставник: [Максим Иванов](https://htmlacademy.ru/profile/id342945).
+* Наставник: [Артур Галимов](https://htmlacademy.ru/profile/id1237543).
 
 ---
 
