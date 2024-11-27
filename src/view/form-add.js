@@ -166,6 +166,7 @@ function createFormAddViewTemplate() {
   );
 }
 
+
 //Класс для взаимодействия с формой создания точек маршрута
 export default class FormAddView {
   getTemplate() {
