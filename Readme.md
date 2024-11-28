@@ -3,6 +3,7 @@
 * Студент: [Николай Казанцев](https://up.htmlacademy.ru/ecmascript-individual/2/user/2522033).
 * Наставник: [Артур Галимов](https://htmlacademy.ru/profile/id1237543).
 
+
 ---
 
 _Не удаляйте и не изменяйте папки и файлы:_
