@@ -4,7 +4,7 @@ import FilterView from '../view/filter';
 import SortView from '../view/sort';
 import PointListView from '../view/points-list';
 import PointView from '../view/point';
-import FormAddView from '../view/form-add';
+// import FormAddView from '../view/form-add';
 import FormEditView from '../view/form-edit';
 
 const COUNT_POINTS = 3;
@@ -30,6 +30,6 @@ export default class PointPresenter {
       render(new PointView(), this.pointListComponent.getElement());
     }
 
-    render(new FormAddView(), this.pointListComponent.getElement());
+    // render(new FormAddView(), this.pointListComponent.getElement());
   }
 }
