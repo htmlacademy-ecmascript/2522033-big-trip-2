@@ -18,7 +18,7 @@ function createInfoViewTemplate() {
 }
 
 //Класс для взаимодействия с информацией о маршруте
-export default class FilterViewInfo {
+export default class infoView {
   getTemplate() {
     return createInfoViewTemplate();
   }
