@@ -2,7 +2,7 @@ import { getDestinations } from '../mock/destinations';
 import { getOffers } from '../mock/offers';
 
 
-export default class TripModel {
+export default class DestinationsAndOffersModel {
   #offers = [];
   #destinations = [];
 
