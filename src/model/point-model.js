@@ -1,6 +1,6 @@
 import { getRandomPoints } from '../mock/points';
 
-export default class TripModel {
+export default class PointModel {
   #points = [];
 
   //инициализация тестовых данных
@@ -12,3 +12,4 @@ export default class TripModel {
   getPoints() {
     return this.#points;
   }
+}

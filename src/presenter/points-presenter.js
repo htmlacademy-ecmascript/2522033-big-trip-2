@@ -12,10 +12,13 @@ const COUNT_POINTS = 3;
 export default class PointPresenter {
   pointListComponent = new PointListView();
 
-  constructor({header, controls, main}) {
+  constructor({header, controls, main, destinationModel, offerModel, pointModel}) {
     this.header = header;
     this.controls = controls;
     this.main = main;
+    this.destinationModel = destinationModel;
+    this.offerModel = offerModel;
+    this.pointModel = pointModel;
   }
 
   //инициализация презентера
@@ -27,7 +30,7 @@ export default class PointPresenter {
     render(new FormEditView(), this.pointListComponent.getElement());
 
     for (let i = 0; i < COUNT_POINTS; i++) {
-      render(new PointView(), this.pointListComponent.getElement());
+      render(new PointView({destination:this.destinationModel,offer:this.offerModel,point:this.pointModel}), this.pointListComponent.getElement());
     }
 
     // render(new FormAddView(), this.pointListComponent.getElement());

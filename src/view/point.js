@@ -1,7 +1,8 @@
 import {createElement} from '../render.js';
 
 //Шаблон для точки маршрута
-function createPointViewTemplate() {
+function createPointViewTemplate(destination,offer,point) {
+  console.log(point.type);
   return (
     `<li class="trip-events__item">
       <div class="event">
@@ -9,7 +10,7 @@ function createPointViewTemplate() {
         <div class="event__type">
           <img class="event__type-icon" width="42" height="42" src="img/icons/taxi.png" alt="Event type icon">
         </div>
-        <h3 class="event__title">Taxi Amsterdam</h3>
+        <h3 class="event__title">${point.type} ${destination.name}</h3>
         <div class="event__schedule">
           <p class="event__time">
             <time class="event__start-time" datetime="2019-03-18T10:30">10:30</time>
@@ -24,9 +25,9 @@ function createPointViewTemplate() {
         <h4 class="visually-hidden">Offers:</h4>
         <ul class="event__selected-offers">
           <li class="event__offer">
-            <span class="event__offer-title">Order Uber</span>
+            <span class="event__offer-title">${offer.title}</span>
             &plus;&euro;&nbsp;
-            <span class="event__offer-price">20</span>
+            <span class="event__offer-price">${offer.price}</span>
           </li>
         </ul>
         <button class="event__favorite-btn event__favorite-btn--active" type="button">
@@ -46,7 +47,7 @@ function createPointViewTemplate() {
 //Класс для взаимодействия с точкой маршрута
 export default class PointView {
   getTemplate() {
-    return createPointViewTemplate();
+    return createPointViewTemplate(this.destination,this.offer,this.point);
   }
 
   getElement() {
@@ -55,6 +56,12 @@ export default class PointView {
     }
 
     return this.element;
+  }
+
+  constructor ({destination, offer, point}){
+    this.destination = destination;
+    this.offer = offer;
+    this.point = point;
   }
 
   removeElement() {
