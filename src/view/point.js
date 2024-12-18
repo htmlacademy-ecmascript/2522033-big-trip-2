@@ -1,8 +1,21 @@
 import {createElement} from '../render.js';
 
+function generateOffersMarkup(offers){
+  let markup = '';
+
+  offers.forEach((offer) => {
+    markup += (`<li class="event__offer">
+    <span class="event__offer-title">${offer.title}</span>
+    &plus;&euro;&nbsp;
+    <span class="event__offer-price">${offer.price}</span>
+  </li>`);
+  });
+
+  return markup;
+}
+
 //Шаблон для точки маршрута
 function createPointViewTemplate(destination,offer,point) {
-  console.log(point.type);
   return (
     `<li class="trip-events__item">
       <div class="event">
@@ -10,7 +23,7 @@ function createPointViewTemplate(destination,offer,point) {
         <div class="event__type">
           <img class="event__type-icon" width="42" height="42" src="img/icons/taxi.png" alt="Event type icon">
         </div>
-        <h3 class="event__title">${point.type} ${destination.name}</h3>
+        <h3 class="event__title">${point.type} ${destination?.name || ''}</h3>
         <div class="event__schedule">
           <p class="event__time">
             <time class="event__start-time" datetime="2019-03-18T10:30">10:30</time>
@@ -24,6 +37,7 @@ function createPointViewTemplate(destination,offer,point) {
         </p>
         <h4 class="visually-hidden">Offers:</h4>
         <ul class="event__selected-offers">
+        ${generateOffersMarkup(offer.offers)}
           <li class="event__offer">
             <span class="event__offer-title">${offer.title}</span>
             &plus;&euro;&nbsp;
@@ -43,6 +57,7 @@ function createPointViewTemplate(destination,offer,point) {
     </li>`
   );
 }
+
 
 //Класс для взаимодействия с точкой маршрута
 export default class PointView {

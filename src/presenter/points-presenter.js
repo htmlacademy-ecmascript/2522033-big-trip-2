@@ -23,15 +23,19 @@ export default class PointPresenter {
 
   //инициализация презентера
   init() {
+    this.pointModel.init();
+    this.offerModel.init();
+    this.destinationModel.init();
+    this.points = [...this.pointModel.getPoints()];
     render(new InfoView(), this.header, RenderPosition.AFTERBEGIN);
     render(new FilterView(), this.controls);
     render(new SortView(), this.main);
     render(this.pointListComponent, this.main);
     render(new FormEditView(), this.pointListComponent.getElement());
 
-    for (let i = 0; i < COUNT_POINTS; i++) {
-      render(new PointView({destination:this.destinationModel,offer:this.offerModel,point:this.pointModel}), this.pointListComponent.getElement());
-    }
+    console.log(this.points);
+    this.points.forEach((point) => render (new PointView({destination:this.destinationModel.getDestinationById(point.id),
+      offer:this.offerModel.getOffersByType(point.type),point}), this.pointListComponent.getElement()));
 
     // render(new FormAddView(), this.pointListComponent.getElement());
   }
