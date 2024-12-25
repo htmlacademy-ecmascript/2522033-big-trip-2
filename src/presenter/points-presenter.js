@@ -33,7 +33,7 @@ export default class PointPresenter {
     render(this.pointListComponent, this.main);
     render(new FormEditView(), this.pointListComponent.getElement());
 
-    console.log(this.points);
+
     this.points.forEach((point) => render (new PointView({destination:this.destinationModel.getDestinationById(point.id),
       offer:this.offerModel.getOffersByType(point.type),point}), this.pointListComponent.getElement()));
 

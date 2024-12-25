@@ -1,6 +1,9 @@
 import {createElement} from '../render.js';
+import {convertDate} from '../utils.js';
+import {DateFormat} from '../const.js';
 
-function generateOffersMarkup(offers){
+
+function generateOffersMarkup({offers}){
   let markup = '';
 
   offers.forEach((offer) => {
@@ -19,7 +22,7 @@ function createPointViewTemplate(destination,offer,point) {
   return (
     `<li class="trip-events__item">
       <div class="event">
-        <time class="event__date" datetime="2019-03-18">MAR 18</time>
+        <time class="event__date" datetime="${point.dateFrom}">${convertDate(point.dateFrom, DateFormat.MONTH_DAY)}</time>
         <div class="event__type">
           <img class="event__type-icon" width="42" height="42" src="img/icons/taxi.png" alt="Event type icon">
         </div>
@@ -33,16 +36,11 @@ function createPointViewTemplate(destination,offer,point) {
           <p class="event__duration">30M</p>
         </div>
         <p class="event__price">
-          &euro;&nbsp;<span class="event__price-value">20</span>
+          &euro;&nbsp;<span class="event__price-value">${point.basePrice}</span>
         </p>
         <h4 class="visually-hidden">Offers:</h4>
         <ul class="event__selected-offers">
-        ${generateOffersMarkup(offer.offers)}
-          <li class="event__offer">
-            <span class="event__offer-title">${offer.title}</span>
-            &plus;&euro;&nbsp;
-            <span class="event__offer-price">${offer.price}</span>
-          </li>
+        ${generateOffersMarkup(offer)}
         </ul>
         <button class="event__favorite-btn event__favorite-btn--active" type="button">
           <span class="visually-hidden">Add to favorite</span>
